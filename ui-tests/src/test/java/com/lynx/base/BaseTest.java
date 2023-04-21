@@ -4,6 +4,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
 import helper.DriverSetup;
+import utilities.PropertiesReader;
 
 public class BaseTest {
 	
@@ -12,6 +13,8 @@ public class BaseTest {
 	@BeforeClass
 	public void setup() {
 		System.out.println("Before Class execution");
+		PropertiesReader.initialiseUiProperties();
+		System.out.println(PropertiesReader.property.getProperty("implicitWaitTime"));
 	}
 	
 	@AfterClass
