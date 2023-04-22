@@ -1,5 +1,6 @@
 package com.lynx.base;
 
+import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
@@ -13,7 +14,7 @@ import helper.DriverSetup;
 import utilities.PropertiesReader;
 
 public class BaseTest {
-	
+	public static WebDriver driver;
 	public ExtentReports extent = null;
 	
 	@BeforeClass

@@ -6,14 +6,16 @@ import com.lynx.base.BaseTest;
 
 import helper.DriverSetup;
 import utilities.GeneralUtils;
+import utilities.TestDataReader;
 
 public class LynxTest extends BaseTest{
-
+	
 	@Test
 	public void test1() {
 		System.out.println("Execution test1");
 		DriverSetup.initDriver();
 		GeneralUtils.testUtils();
+		driver.get(TestDataReader.getData("URL"));
 	}
 
 }
