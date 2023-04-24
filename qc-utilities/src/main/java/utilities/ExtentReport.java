@@ -7,7 +7,7 @@ public class ExtentReport {
 	
 	public static ExtentReports setupReport() {
 		// directory where output is to be printed
-		ExtentSparkReporter reportFile = new ExtentSparkReporter("C:\\Users\\User\\Desktop\\Automation\\Automation-testng\\ui-tests\\reports\\TestResults.html");
+		ExtentSparkReporter reportFile = new ExtentSparkReporter(System.getProperty("user.dir")+"/reports/TestResults.html");
 		ExtentReports extent = new ExtentReports();
 		extent.attachReporter(reportFile);
 		return extent;
