@@ -2,32 +2,32 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-04-23T14:29:08 MYT" name="Default suite" finished-at="2023-04-23T14:29:12 MYT" duration-ms="4264">
+  <suite started-at="2023-04-24T00:20:21 MYT" name="Suite" finished-at="2023-04-24T00:20:32 MYT" duration-ms="10849">
     <groups>
     </groups>
-    <test started-at="2023-04-23T14:29:08 MYT" name="Default test" finished-at="2023-04-23T14:29:12 MYT" duration-ms="4264">
+    <test started-at="2023-04-24T00:20:21 MYT" name="Test" finished-at="2023-04-24T00:20:32 MYT" duration-ms="10849">
       <class name="com.lynx.test.LynxTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.lynx.test.LynxTest@48aca48b]" started-at="2023-04-23T14:29:08 MYT" name="setup" finished-at="2023-04-23T14:29:08 MYT" duration-ms="234" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.lynx.test.LynxTest@48aca48b]" started-at="2023-04-24T00:20:20 MYT" name="setup" finished-at="2023-04-24T00:20:21 MYT" duration-ms="874" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method is-config="true" signature="setupTest()[pri:0, instance:com.lynx.test.LynxTest@48aca48b]" started-at="2023-04-23T14:29:08 MYT" name="setupTest" finished-at="2023-04-23T14:29:08 MYT" duration-ms="3" status="PASS">
+        <test-method is-config="true" signature="setupTest()[pri:0, instance:com.lynx.test.LynxTest@48aca48b]" started-at="2023-04-24T00:20:21 MYT" name="setupTest" finished-at="2023-04-24T00:20:21 MYT" duration-ms="13" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupTest -->
-        <test-method signature="test1()[pri:0, instance:com.lynx.test.LynxTest@48aca48b]" started-at="2023-04-23T14:29:08 MYT" name="test1" finished-at="2023-04-23T14:29:12 MYT" duration-ms="3869" status="PASS">
+        <test-method signature="test1()[pri:0, instance:com.lynx.test.LynxTest@48aca48b]" started-at="2023-04-24T00:20:21 MYT" name="test1" finished-at="2023-04-24T00:20:30 MYT" duration-ms="9051" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test1 -->
-        <test-method is-config="true" signature="tearDownTest()[pri:0, instance:com.lynx.test.LynxTest@48aca48b]" started-at="2023-04-23T14:29:12 MYT" name="tearDownTest" finished-at="2023-04-23T14:29:12 MYT" duration-ms="162" status="PASS">
+        <test-method is-config="true" signature="tearDownTest()[pri:0, instance:com.lynx.test.LynxTest@48aca48b]" started-at="2023-04-24T00:20:30 MYT" name="tearDownTest" finished-at="2023-04-24T00:20:31 MYT" duration-ms="581" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownTest -->
-        <test-method is-config="true" signature="teardownTest()[pri:0, instance:com.lynx.test.LynxTest@48aca48b]" started-at="2023-04-23T14:29:12 MYT" name="teardownTest" finished-at="2023-04-23T14:29:12 MYT" duration-ms="206" status="PASS">
+        <test-method is-config="true" signature="teardownTest()[pri:0, instance:com.lynx.test.LynxTest@48aca48b]" started-at="2023-04-24T00:20:31 MYT" name="teardownTest" finished-at="2023-04-24T00:20:32 MYT" duration-ms="1132" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardownTest -->
       </class> <!-- com.lynx.test.LynxTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>
