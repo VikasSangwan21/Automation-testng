@@ -24,6 +24,7 @@ public class BaseTest {
 	@BeforeSuite
 	public void setup() {
 		System.out.println("Before Suite execution");
+		System.setProperty("project.path", System.getProperty("user.dir").replace("\\ui-tests", ""));
 		FrameworkConfig config = ConfigFactory.create(FrameworkConfig.class);
 		uiconfig = ConfigFactory.create(UIConfig.class);
 		System.out.println("Testing environment: "+config.environment());
