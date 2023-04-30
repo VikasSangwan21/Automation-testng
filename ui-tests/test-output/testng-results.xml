@@ -2,7 +2,6 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-<<<<<<< HEAD
   <suite started-at="2023-04-25T01:18:19 MYT" name="Default suite" finished-at="2023-04-25T01:18:25 MYT" duration-ms="6056">
     <groups>
     </groups>
@@ -25,26 +24,6 @@
           </reporter-output>
         </test-method> <!-- tearDownTest -->
         <test-method is-config="true" signature="teardownTest()[pri:0, instance:com.lynx.test.LynxTest@52b1beb6]" started-at="2023-04-25T01:18:24 MYT" name="teardownTest" finished-at="2023-04-25T01:18:25 MYT" duration-ms="205" status="PASS">
-=======
-  <suite name="Suite" duration-ms="72642" started-at="2023-04-30T20:14:37 IST" finished-at="2023-04-30T20:15:50 IST">
-    <groups>
-    </groups>
-    <test name="Test" duration-ms="72642" started-at="2023-04-30T20:14:37 IST" finished-at="2023-04-30T20:15:50 IST">
-      <class name="com.lynx.test.LynxTest">
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.lynx.test.LynxTest@1021e6c]" name="setup" is-config="true" duration-ms="2913" started-at="2023-04-30T20:14:34 IST" finished-at="2023-04-30T20:14:37 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method status="PASS" signature="setupTest()[pri:0, instance:com.lynx.test.LynxTest@1021e6c]" name="setupTest" is-config="true" duration-ms="52" started-at="2023-04-30T20:14:37 IST" finished-at="2023-04-30T20:14:37 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setupTest -->
-        <test-method status="PASS" signature="test1()[pri:0, instance:com.lynx.test.LynxTest@1021e6c]" name="test1" duration-ms="69162" started-at="2023-04-30T20:14:37 IST" finished-at="2023-04-30T20:15:46 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test1 -->
-        <test-method status="PASS" signature="teardownTest()[pri:0, instance:com.lynx.test.LynxTest@1021e6c]" name="teardownTest" is-config="true" duration-ms="3165" started-at="2023-04-30T20:15:47 IST" finished-at="2023-04-30T20:15:50 IST">
->>>>>>> 9e473e381be1090d24ca7253ed3d4d85192c1e5b
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardownTest -->
