@@ -15,7 +15,7 @@ public class EmailUtils {
 	public static void sendMail(){
 		final String fromEmail = "pandeypawan304@gmail.com"; //requires valid gmail id
 		final String passwd = "piiufknjravdiwpf"; // correct password for gmail id
-	       String toEmail = "pandeypawan304@yahoo.com"; // can be any email id
+	       String toEmail = "vaticidevikk@gmail.com"; // can be any email id
 		Properties props = new Properties();
 		props.put("mail.smtp.host", "smtp.gmail.com"); //SMTP Host
 		props.put("mail.smtp.socketFactory.port", "465"); //SSL Port

@@ -19,9 +19,9 @@ public class ExcelReader {
 	static String projectPath;
 	static XSSFWorkbook workbook ;
 	static XSSFSheet sheet;
-	
-public ExcelReader(String excelPath,String sheetName) {
-		
+
+	public ExcelReader(String excelPath,String sheetName) {
+
 		try {
 			projectPath=System.getProperty("user.dir");
 			workbook = new XSSFWorkbook(excelPath);
@@ -34,25 +34,12 @@ public ExcelReader(String excelPath,String sheetName) {
 		}
 	}
 
-//	public static void main(String[] args) {
-//		getRowCount();
-////		getcolcount();
-////		getcelldataString(1,0);
-////		getcelldataNumber(1,1);
-//
-//	}
 
 
-
-	//*Main function to call all excel related functions
-
-	
-
-	//* Function to fetch the row count from excel in which data is present
 	public static int getRowCount()  {
 
 		try {
-			
+
 			int rowCount = sheet.getPhysicalNumberOfRows();
 			System.out.println("No of rows : "+rowCount);
 			return rowCount;
@@ -66,12 +53,9 @@ public ExcelReader(String excelPath,String sheetName) {
 	}
 
 	//* Function to fetch the row count from excel in which data is present
-	public static int getcolcount()  {
-
+	public static int getColCount()  {
 		try {
-
 			int colCount = sheet.getRow(0).getPhysicalNumberOfCells();
-			System.out.println("No of cols : "+colCount);
 			return colCount;
 		} catch (Exception exp ) {
 			System.out.println(exp.getMessage());;
@@ -80,6 +64,33 @@ public ExcelReader(String excelPath,String sheetName) {
 
 		}
 		return 0;
+	}
+
+	public static int findStringInRow(int rowNo, String key)  {
+		try {
+			for(int i =0; i<getColCount(); i++) {
+				if(sheet.getRow(rowNo).getCell(i).toString().equalsIgnoreCase(key)) {
+					return i;
+				}
+			}
+		} catch (Exception exp ) {
+			System.out.println(exp.getMessage());;
+			System.out.println(exp.getCause());
+			exp.printStackTrace();
+			return 0;
+		}
+		return 0;
+	}
+
+	public static String getCellValueAsString(int rowNo, int colNo)  {
+		try {
+			return sheet.getRow(rowNo).getCell(colNo).toString();
+		} catch (Exception exp ) {
+			System.out.println(exp.getMessage());;
+			System.out.println(exp.getCause());
+			exp.printStackTrace();
+			return "";
+		}
 	}
 
 	//* Function to fetch the String data from the Cell of excel

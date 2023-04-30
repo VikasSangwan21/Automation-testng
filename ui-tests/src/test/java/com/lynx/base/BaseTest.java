@@ -15,6 +15,7 @@ import helper.DriverSetup;
 import interfaces.FrameworkConfig;
 import interfaces.UIConfig;
 import utilities.EmailUtils;
+import utilities.ExcelReader;
 import utilities.ExtentReport;
 
 public class BaseTest {
@@ -22,6 +23,7 @@ public class BaseTest {
 	public ExtentReports extent = null;
 	public static String env = "";
 	public static UIConfig uiconfig ;
+	public static ExcelReader testDataExcel;
 	
 	@BeforeSuite
 	public void setup() {
@@ -31,6 +33,7 @@ public class BaseTest {
 		uiconfig = ConfigFactory.create(UIConfig.class);
 		System.out.println("Testing environment: "+config.environment());
 		extent = ExtentReport.setupReport();
+		testDataExcel = new ExcelReader(System.getProperty("user.dir")+"/src/test/resources/test-data/TestData.xlsx","sheet1");
 	
 
 	}
