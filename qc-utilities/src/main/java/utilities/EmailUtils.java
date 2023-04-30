@@ -1,106 +1,66 @@
 package utilities;
 
-import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Date;
+import java.util.Properties;
 
-import org.apache.commons.mail.DefaultAuthenticator;
-import org.apache.commons.mail.Email;
-import org.apache.commons.mail.EmailAttachment;
-import org.apache.commons.mail.EmailException;
-import org.apache.commons.mail.MultiPartEmail;
-import org.apache.commons.mail.SimpleEmail;
+import javax.mail.Authenticator;
+import javax.mail.Message;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 
 public class EmailUtils {
-	
-	public static void main(String[] args) throws EmailException {
-		sendmailWithAttachmentFile();
-		sendmail();
-	}
-	
-	public static void sendmail() throws EmailException {
-		System.out.println("starting mail sending.....");
-		Email email = new SimpleEmail();
-		email.setHostName("smtp.gmail.com");
-		email.setSmtpPort(465);
-		email.setAuthenticator(new DefaultAuthenticator("manishsangwan920@gmail.com", "wdjkrlfmqnejgsgg"));
-		email.setSSLOnConnect(true);
-		email.setFrom("manishsangwan920@gmail.com");
-		email.setSubject("TestMail");
-		email.setMsg("This is a test mail ... :-)");
-		email.addTo("reepu@geekferry.com");
-		email.send();
-		System.out.println("mail sent");
-	}
-	
-	
-	public static String getreportpath() {
-		List<String> results = new ArrayList<String>();
-		List<String> htmlresults = new ArrayList<String>();
-		File[] files = new File(System.getProperty("user.dir")+"/reports").listFiles();
-		for (File file : files) {
-		    if (file.isFile()) {
-		        results.add(file.getName());
-		    }
-		}
-		for(int i=0; i<results.size(); i++) {
-			if(results.get(i).contains("ExtentReport")) {
-				htmlresults.add(results.get(i));
+	public static void sendMail(){
+		final String fromEmail = "pandeypawan304@gmail.com"; //requires valid gmail id
+		final String passwd = "piiufknjravdiwpf"; // correct password for gmail id
+	       String toEmail = "pandeypawan304@yahoo.com"; // can be any email id
+		Properties props = new Properties();
+		props.put("mail.smtp.host", "smtp.gmail.com"); //SMTP Host
+		props.put("mail.smtp.socketFactory.port", "465"); //SSL Port
+		props.put("mail.smtp.socketFactory.class",
+				"javax.net.ssl.SSLSocketFactory"); //SSL Factory Class
+		props.put("mail.smtp.auth", "true"); //Enabling SMTP Authentication
+		props.put("mail.smtp.port", "465"); //SMTP Port
+
+
+		Authenticator auth = new Authenticator() {
+			//override the getPasswordAuthentication method
+			protected PasswordAuthentication getPasswordAuthentication() {
+				return new PasswordAuthentication(fromEmail, passwd);
 			}
+		};
+
+		Session session = Session.getDefaultInstance(props, auth);
+		session.setDebug(true);
+		try
+		{
+			MimeMessage msg = new MimeMessage(session);
+			//set message headers
+			msg.addHeader("Content-type", "text/HTML; charset=UTF-8");
+			msg.addHeader("format", "flowed");
+			msg.addHeader("Content-Transfer-Encoding", "8bit");
+
+			msg.setFrom(new InternetAddress(fromEmail, "NoReply-JD"));
+
+			msg.setReplyTo(InternetAddress.parse(toEmail, false));
+
+			msg.setSubject("Test", "UTF-8");
+
+			msg.setText(" Test 1 Execution Completed successfully.", "UTF-8");
+
+			msg.setSentDate(new Date());
+
+			msg.setRecipients(Message.RecipientType.TO, InternetAddress.parse(toEmail, false));
+			System.out.println("Message is ready");
+			Transport.send(msg);  
+
+			System.out.println("EMail Sent Successfully!!");
 		}
-		
-		String latesthtmlreport = htmlresults.get(htmlresults.size()-1);
-		return latesthtmlreport;
+		catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
-	
-	
-	public static void sendmailWithAttachmentFile() throws EmailException {
-		System.out.println("Email Sending.....");
-		ArrayList<String> userlist = new ArrayList<String>();
-		userlist.add("reepushah78@gmail.com");
-		userlist.add("manish@hellonesh.io");
-	/*	EmailAttachment attachment = new EmailAttachment();
-	     attachment.setPath(System.getProperty("user.dir")+"/reports/"+getreportpath());
-	     attachment.setDisposition(EmailAttachment.ATTACHMENT);
-	     attachment.setDescription("TestNG Report");
-	     attachment.setName("QA"+getreportpath()); */
-
-	     MultiPartEmail email = new MultiPartEmail();
-	     email.setHostName("smtp.gmail.com");
-	     email.setSmtpPort(465);
-	     email.setAuthenticator(new DefaultAuthenticator("manishsangwan920@gmail.com","wdjkrlfmqnejgsgg"));
-	     email.setSSLOnConnect(true);
-	     for(int i=0; i<userlist.size(); i++) {
-	    	String emaiId = userlist.get(i);
-	    	email.addTo(emaiId);
-	     }
-	     email.setFrom("manishsangwan920@gmail.com");
-	     email.setSubject("QA UI Automation Execution Report");
-	     email.setMsg("attached Ui Automation test cases execution report");
-	//    email.attach(attachment);
-	     email.send();
-	     System.out.println("Email Sent!");
-	}
-	
-	
-	public static void demo() {
-		//declaring and initializing a string  
-		String str = "Converting string to string array using split() method";  
-		//declaring an empty string array  
-		String[] strArray = null;  
-		//converting using String.split() method with whitespace as a delimiter  
-		strArray = str.split(" ");  
-		//printing the converted string array  
-		for (int i = 0; i< strArray.length; i++){  
-		System.out.println(strArray[i]);  
-		}  
-	}
-	
-	
-            
-
-	
-	
-	
 
 }

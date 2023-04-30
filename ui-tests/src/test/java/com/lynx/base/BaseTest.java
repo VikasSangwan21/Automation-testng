@@ -3,6 +3,7 @@ package com.lynx.base;
 import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
@@ -13,6 +14,7 @@ import com.aventstack.extentreports.ExtentTest;
 import helper.DriverSetup;
 import interfaces.FrameworkConfig;
 import interfaces.UIConfig;
+import utilities.EmailUtils;
 import utilities.ExtentReport;
 
 public class BaseTest {
@@ -48,10 +50,11 @@ public class BaseTest {
 
 	}
 	
-	@AfterClass
+	@AfterSuite
 	public void tearDownTest() {
 		System.out.println("After Class Execution");
 		DriverSetup.quitDriver();
+		 EmailUtils.sendMail();
 	}
 	
 	
