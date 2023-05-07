@@ -25,10 +25,12 @@ public class LynxTest extends BaseTest{
 	@Test
 	public void test1() {
 		System.out.println("Execution test1");
-		driver = DriverSetup.initDriver();
-		GeneralUtils.testUtils();
-		driver.get(uiconfig.URL());
-
+		System.out.println(TestDataReader.getData(testDataExcel, "Username"));
+		System.out.println(TestDataReader.getData(testDataExcel, "Password"));
+		//driver = DriverSetup.initDriver();
+		//GeneralUtils.testUtils();
+		//driver.get(uiconfig.URL());
+		
 	 
 	}
 	

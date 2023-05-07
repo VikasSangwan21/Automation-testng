@@ -25,10 +25,11 @@ import org.apache.xmlbeans.impl.xb.xsdschema.Public;
 
 public class EmailUtils {
 
+
 	public static void main(String... args) {
 	} public static void sendMail(){
 		
-		Properties props = new Properties();
+	Properties props = new Properties();
 
 		//load a properties file from class path, inside static method
 		String projectPath=System.getProperty("user.dir");
