@@ -40,9 +40,6 @@
 	    <artifactId>owner</artifactId>
 	    <version>1.0.12</version>
 	</dependency>
-
-
-
-
   </dependencies>
+  
 </project>

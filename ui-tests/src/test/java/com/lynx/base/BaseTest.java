@@ -17,9 +17,11 @@ import interfaces.UIConfig;
 import utilities.EmailUtils;
 import utilities.ExtentReport;
 
+
 public class BaseTest {
 	public static WebDriver driver;
 	public ExtentReports extent = null;
+	//public  EmailUtils email= null;
 	public static String env = "";
 	public static UIConfig uiconfig ;
 	
@@ -31,6 +33,7 @@ public class BaseTest {
 		uiconfig = ConfigFactory.create(UIConfig.class);
 		System.out.println("Testing environment: "+config.environment());
 		extent = ExtentReport.setupReport();
+		//email=new EmailUtils();
 	
 
 	}
@@ -54,7 +57,7 @@ public class BaseTest {
 	public void tearDownTest() {
 		System.out.println("After Class Execution");
 		DriverSetup.quitDriver();
-		 EmailUtils.sendMail();
+		EmailUtils.sendMail();
 	}
 	
 	

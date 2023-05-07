@@ -16,7 +16,7 @@ import org.testng.annotations.Test;
 import com.lynx.base.BaseTest;
 
 import helper.DriverSetup;
-import utilities.EmailUtils;
+
 import utilities.GeneralUtils;
 import utilities.TestDataReader;
 

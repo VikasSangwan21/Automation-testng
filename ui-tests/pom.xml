@@ -51,4 +51,22 @@
 </dependency>
 
   </dependencies>
+
+	<build>
+		<plugins>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>3.0.0</version>
+				<configuration>
+					<suiteXmlFiles>
+						<suiteXmlFile>C:\Users\user\Desktop\Automation_28Apr\celsius-qa-canary\ui-tests\src\test\resources\suites\regressionTest.xml</suiteXmlFile>
+					</suiteXmlFiles>
+				</configuration>
+			</plugin>
+
+		</plugins>
+	</build>
+	 
 </project>
